@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style1.css">
+  <style>
+    /* Dashboard-specific styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #dashboard-container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      color: #fff;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg, #feb47b, #ff7e5f);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div id="dashboard-container">
+    <h1>Welcome to Your Dashboard</h1>
+    <p id="welcome-message">Fetching your details...</p>
+    <a href="/index.html" class="button">Logout</a>
+  </div>
+
+  <script>
+    // Fetch username from URL query parameters
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('username');
+
+    // Display username or a default message
+    const welcomeMessage = document.getElementById('welcome-message');
+    if (username) {
+      welcomeMessage.textContent = `Welcome, ${username}!`;
+    } else {
+      welcomeMessage.textContent = 'Welcome to your dashboard!';
+    }
+  </script>
+</body>
+</html>
