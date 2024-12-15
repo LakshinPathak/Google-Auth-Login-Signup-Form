@@ -7,7 +7,7 @@ passport.use(
     {
       clientID: '1010900816162-tecnq3ip1pcudnmhv2ohnmscu6h49s6u.apps.googleusercontent.com',
       clientSecret: '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',
-      callbackURL: 'http://localhost:3000/auth/google/callback' || 'https://google-auth-login-signup-form.onrender.com/auth/google/callback' ,
+      callbackURL: 'https://google-auth-login-signup-form.onrender.com/auth/google/callback' ,
     },
 
     async (accessToken, refreshToken, profile, done) => {
